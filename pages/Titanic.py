@@ -66,7 +66,3 @@ if st.button("Predict"):
         st.success("The passenger is predicted to survive.")
     else:
         st.error("The passenger is predicted to not survive.")
-
-    # Display model accuracy
-    # accuracy = (model.predict(X) == y).mean()
-    # st.write(f"### Model Accuracy: {accuracy:.2%}")
