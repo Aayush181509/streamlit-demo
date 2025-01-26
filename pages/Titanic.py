@@ -28,9 +28,6 @@ def load_model():
 
 model = load_model()
 
-st.sidebar.header("Input Passenger Details")
-
-
 
 # Sidebar inputs
 st.sidebar.header("Input Passenger Details")
