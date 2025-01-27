@@ -6,7 +6,7 @@ import pickle
 
 @st.cache_data
 def load_data():
-    data = pd.read_csv("data/train_titanic.csv")
+    data = pd.read_csv("data/train_titanic.csv",index_col=0)
     return pd.DataFrame(data)
 
 
