@@ -1,12 +1,13 @@
 import streamlit as st
 import pandas as pd
+
 # from sklearn.linear_model import LogisticRegression
 import pickle
 
 
 @st.cache_data
 def load_data():
-    data = pd.read_csv("data/train_titanic.csv",index_col=0)
+    data = pd.read_csv("data/train_titanic.csv", index_col=0)
     return pd.DataFrame(data)
 
 
@@ -40,15 +41,16 @@ parch = st.sidebar.number_input(
 )
 fare = st.sidebar.number_input("Fare", min_value=0.0, max_value=600.0, value=10.0)
 sex = st.sidebar.selectbox("Sex", ["male", "female"])
+pclass = st.sidebar.selectbox("Passenger Class", [1, 2, 3])
 
 # Encode input data
 sex_encoded = 1 if sex == "male" else 0
-
+pclass_1 = 1 if pclass == 1 else 0
+pclass_2 = 1 if pclass == 2 else 0
+pclass_3 = 1 if pclass == 3 else 0
 
 # Create input array
-input_data = [
-    [sex_encoded, age, sibsp, parch, fare]
-]
+input_data = [[sex_encoded, age, sibsp, parch, fare, pclass_1, pclass_2, pclass_3]]
 
 # Make prediction using loaded model
 prediction = model.predict(input_data)
